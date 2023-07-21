@@ -1,48 +1,48 @@
-pokemonList = [
+const pokemonList = [
     {
         name: 'Bulbasaur',
         height: 0.7,
-        type: ['grass','poison']
+        types: ['grass','poison']
     },
     {
         name: 'Ivysaur',
         height: 1,
-        type: ['grass','poison']
+        types: ['grass','poison']
     },
     {
         name: 'Venusaur',
         height: 2,
-        type: ['grass','poison']
+        types: ['grass','poison']
     },
     {
         name: 'Charmander',
         height: 0.6,
-        type: ['fire']
+        types: ['fire']
     },
     {
         name: 'Charmeleon',
         height: 1.1,
-        type: ['fire']
+        types: ['fire']
     },
     {
         name: 'Charizard',
         height: 1.7,
-        type: ['fire','flying']
+        types: ['fire','flying']
     },
     {
         name: 'Squirtle',
         height: 0.5,
-        type: ['water']
+        types: ['water']
     },
     {
         name: 'Wartortle',
         height: 1,
-        type: ['water']
+        types: ['water']
     },
     {
         name: 'Blastoise',
         height: 1.6,
-        type: ['water']
+        types: ['water']
     },
 
-]
+];
