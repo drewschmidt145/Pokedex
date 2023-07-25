@@ -47,8 +47,9 @@ const pokemonList = [
 
 ];
 
+
 for (let i = 0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height >=1){
+    if (pokemonList[i].height >=2){
         document.write(` <span class=pokemon-list> ${pokemonList[i].name} (height: ${pokemonList[i].height}) - Wow, that's big!`);
     }
     else {
