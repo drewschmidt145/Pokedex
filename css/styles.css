@@ -6,6 +6,17 @@ body {
     line-height: normal;
 }
 
+#header-title {
+    font-size: 40px;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+}
+
+.page-header__item {
+    display: inline-block;
+}
+
 .pokemon-list {
     display: block;
 }
