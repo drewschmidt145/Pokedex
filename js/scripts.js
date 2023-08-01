@@ -47,7 +47,7 @@ const pokemonList = [
 
 ];
 
-
+/*
 for (let i = 0; i < pokemonList.length; i++) {
     if (pokemonList[i].height >=2){
         document.write(` <span class=pokemon-list> ${pokemonList[i].name} (height: ${pokemonList[i].height}) - Wow, that's big!`);
@@ -56,5 +56,17 @@ for (let i = 0; i < pokemonList.length; i++) {
         document.write(` <span class=pokemon-list> ${pokemonList[i].name} (height: ${pokemonList[i].height})`);
     }
 
-  };
+};
+*/
+
+pokemonList.forEach(pokemonListFunction);
+
+function pokemonListFunction(item) {
+    if (item.height >=2){
+        document.write(` <span class=pokemon-list> ${item.name} (height: ${item.height}) - Wow, that's big!`);
+    }
+    else {
+        document.write(` <span class=pokemon-list> ${item.name} (height: ${item.height})`);
+    }
+}
 
