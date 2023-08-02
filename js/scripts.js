@@ -58,17 +58,28 @@ let pokemonRepository = (function () {
     }
     
     function addListItem(pokemon) {
-        let pokemonList = document.querySelector('.pokemon-list');
-        let listItem = document.createElement('li');
-        let button = document.createElement('button');
-        button.classList.add('button')
+        let pokemonList = document.querySelector('.pokemon-list'); // this selects the <ul> within HTML
+        let listItem = document.createElement('li'); // these 2 add elements to be added within the <ul>
+        let pokemonButton = document.createElement('button');
+
+        pokemonButton.classList.add('button') // these adds classes to the elements
         listItem.classList.add('listItem')
-        button.innerText = pokemon.name;
-        listItem.appendChild(button);
+
+        pokemonButton.innerText = pokemon.name; // what is written inside the button
+
+        listItem.appendChild(pokemonButton); // these two append to each other in HTML
         pokemonList.appendChild(listItem);
+
+        pokemonButton.addEventListener('click', function(event) { // this is an event when click on specific pokemon button
+            showDetails(pokemon);
+        });
     }
 
-    return {
+    function showDetails(pokemon) {
+        console.log(pokemon)
+    }
+
+    return { // these are the functions that are returned and automaticatally activated because inside IIFE
       add: add,
       getAll: getAll,
       addListItem: addListItem
@@ -77,6 +88,6 @@ let pokemonRepository = (function () {
 
 
 pokemonRepository.getAll().forEach(function (pokemon) {
-    pokemonRepository.addListItem(pokemon);
+    pokemonRepository.addListItem(pokemon); // calls the addListItem function inside IIFE
 });
 
