@@ -1,6 +1,6 @@
 
 let pokemonRepository = (function () {
-    const pokemonList = [
+    const pokemonArray = [
         {
             name: 'Bulbasaur',
             height: 0.7,
@@ -50,36 +50,33 @@ let pokemonRepository = (function () {
     ];
   
     function add(pokemon) {
-      pokemonList.push(pokemon);
+      pokemonArray.push(pokemon);
     }
   
     function getAll() {
-      return pokemonList;
+      return pokemonArray;
     }
-  
+    
+    function addListItem(pokemon) {
+        let pokemonList = document.querySelector('.pokemon-list');
+        let listItem = document.createElement('li');
+        let button = document.createElement('button');
+        button.classList.add('button')
+        listItem.classList.add('listItem')
+        button.innerText = pokemon.name;
+        listItem.appendChild(button);
+        pokemonList.appendChild(listItem);
+    }
+
     return {
       add: add,
-      getAll: getAll
+      getAll: getAll,
+      addListItem: addListItem
     };
 })();
 
 
-/*
-pokemonRepository.getAll().function pokemonListFunction(item) {
-      if (item.height >=2){
-          document.write(` <span class=pokemon-list> ${item.name} (height: ${item.height}) - Wow, that's big!`);
-      }
-      else {
-          document.write(` <span class=pokemon-list> ${item.name} (height: ${item.height})`);
-      }
-};
-*/
-
 pokemonRepository.getAll().forEach(function (pokemon) {
-    if (pokemon.height >=2){
-        document.write(` <span class=pokemon-list> ${pokemon.name} (height: ${pokemon.height}) - Wow, that's big!`);
-    }
-    else {
-        document.write(` <span class=pokemon-list> ${pokemon.name} (height: ${pokemon.height})`);
-    }
+    pokemonRepository.addListItem(pokemon);
 });
+
