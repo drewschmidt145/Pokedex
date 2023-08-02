@@ -10,13 +10,52 @@ body {
     font-size: 40px;
     font-weight: 700;
     text-decoration: none;
-    color: black;
+    text-align: center;
+    
 }
 
-.page-header__item {
-    display: inline-block;
-}
 
 .pokemon-list {
     display: block;
+}
+
+.listItem {
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns: auto;
+    height: 80px;
+    width: 33%;
+    padding: 10px;
+    margin: auto;
+    
+}
+
+.button {
+    background-color: #d3d3d3;
+    border-radius: 8px;
+}
+
+.button:hover {
+    background-color: #aaa9a9;
+}
+
+@supports (display: grid) {
+    .listItem {
+        display: grid;
+        grid-template-rows: 1;
+        grid-template-columns: auto;
+        height: 80px;
+        width: 33%;
+        padding: 10px;
+        margin: auto;
+        
+    }
+    
+    @media all and (max-width: 750px) {
+        .listItem {
+            width: auto;
+            min-height: auto;
+        }
+    }
+    
 }
