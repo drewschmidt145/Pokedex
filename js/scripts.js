@@ -31,10 +31,6 @@ let pokemonRepository = (function () {
     }
 
     function showDetails(pokemon) {
-      let name = pokemon.name
-      let height = pokemon.height
-      let image = pokemon.imageUrl
-
       loadDetails(pokemon).then(function () {
         showModal(pokemon)
       });
@@ -60,7 +56,7 @@ let pokemonRepository = (function () {
       titleElement.innerText = pokemon.name;
 
       let contentElement = document.createElement('p');
-      contentElement.innerText = 'Height: ' + pokemon.height;
+      contentElement.innerText = 'Height: ' + pokemon.height + ' m';
 
       let imageElement = document.createElement('img');
       imageElement.src = pokemon.imageUrl;
