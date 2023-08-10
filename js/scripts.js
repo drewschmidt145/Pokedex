@@ -31,10 +31,70 @@ let pokemonRepository = (function () {
     }
 
     function showDetails(pokemon) {
-        loadDetails(pokemon).then(function () {
-            console.log(pokemon);
-        });
+      let name = pokemon.name
+      let height = pokemon.height
+      let image = pokemon.imageUrl
+
+      loadDetails(pokemon).then(function () {
+        showModal(pokemon)
+      });
     }
+
+    // Modal Section
+
+    function showModal(pokemon) {
+      let modalContainer = document.querySelector('#modal-container');
+
+      modalContainer.innerHTML = ''; // clears all existing modal content
+
+      let modal = document.createElement('div');
+      modal.classList.add('modal');
+
+      // this is for the close button on top right of modal
+      let closeButtonElement = document.createElement('button');
+      closeButtonElement.classList.add('modal-close');
+      closeButtonElement.innerText = 'Close';
+      closeButtonElement.addEventListener('click', hideModal);
+
+      let titleElement = document.createElement('h1');
+      titleElement.innerText = pokemon.name;
+
+      let contentElement = document.createElement('p');
+      contentElement.innerText = 'Height: ' + pokemon.height;
+
+      let imageElement = document.createElement('img');
+      imageElement.src = pokemon.imageUrl;
+
+      modal.appendChild(closeButtonElement);
+      modal.appendChild(titleElement);
+      modal.appendChild(contentElement);
+      modal.appendChild(imageElement);
+      modalContainer.appendChild(modal);
+
+      modalContainer.classList.add('is-visible');
+
+      modalContainer.addEventListener('click', (e) => {
+        // Since this is also triggered when clicking INSIDE the modal
+        // We only want to close if the user clicks directly on the overlay
+        let target = e.target;
+        if (target === modalContainer) {
+          hideModal();
+        }
+      });
+    }
+
+    window.addEventListener('keydown', (e) => { // this is for using escape to exit Modal
+      let modalContainer = document.querySelector('#modal-container');
+      if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+        hideModal();
+      }
+    });
+
+    function hideModal() {
+      let modalContainer = document.querySelector('#modal-container');
+      modalContainer.classList.remove('is-visible');
+    }
+
 
 
     function loadList() {
