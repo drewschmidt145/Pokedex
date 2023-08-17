@@ -20,6 +20,7 @@ let pokemonRepository = (function () {
         pokemonButton.classList.add('button') // these adds classes to the elements
         listItem.classList.add('listItem')
 
+
         pokemonButton.innerText = pokemon.name; // what is written inside the button
 
         listItem.appendChild(pokemonButton); // these two append to each other in HTML
