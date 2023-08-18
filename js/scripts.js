@@ -17,8 +17,11 @@ let pokemonRepository = (function () {
         let listItem = document.createElement('li'); // these 2 add elements to be added within the <ul>
         let pokemonButton = document.createElement('button');
 
-        pokemonButton.classList.add('button') // these adds classes to the elements
-        listItem.classList.add('listItem')
+        
+        $(pokemonButton).addClass('button btn btn-primary').attr('type', 'button')
+          .attr('data-toggle', 'modal').attr('data-target', '.modal-container');
+
+        $(listItem).addClass('listItem list-group-item')
 
 
         pokemonButton.innerText = pokemon.name; // what is written inside the button
@@ -29,6 +32,8 @@ let pokemonRepository = (function () {
         pokemonButton.addEventListener('click', function(event) { // this is an event when click on specific pokemon button
             showDetails(pokemon);
         });
+
+        
     }
 
     function showDetails(pokemon) {
@@ -40,21 +45,24 @@ let pokemonRepository = (function () {
     // Modal Section
 
     function showModal(pokemon) {
-      let modalContainer = document.querySelector('#modal-container');
+      let modalContainer = document.querySelector('#modal-container'); 
 
       modalContainer.innerHTML = ''; // clears all existing modal content
 
       let modal = document.createElement('div');
-      modal.classList.add('modal');
+      modal.classList.add('modal-page');
 
       // this is for the close button on top right of modal
       let closeButtonElement = document.createElement('button');
-      closeButtonElement.classList.add('modal-close');
+      $(closeButtonElement).addClass('modal-close close').attr('data-dismiss', 'modal')
+      .attr('aria-label', 'close').attr('type', 'button');
+
       closeButtonElement.innerText = 'Close';
       closeButtonElement.addEventListener('click', hideModal);
 
       let titleElement = document.createElement('h1');
       titleElement.innerText = pokemon.name;
+      titleElement.classList.add('capitalize');
 
       let contentElement = document.createElement('p');
       contentElement.innerText = 'Height: ' + pokemon.height + ' m';
@@ -128,7 +136,10 @@ let pokemonRepository = (function () {
       getAll: getAll,
       addListItem: addListItem,
       loadList: loadList,
-      loadDetails: loadDetails
+      loadDetails: loadDetails,
+      hideModal: hideModal,
+      showModal: showModal,
+
     };
 })();
 
