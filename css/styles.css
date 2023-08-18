@@ -20,6 +20,7 @@ body {
     text-decoration: none;
 }
 
+
 div.pokedex {
     display: flex;
     flex-direction: column;
