@@ -25,15 +25,15 @@ div.pokedex {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: white;
-    border: 4px solid rgba(78, 110, 129, 1);
+
+
     width: 900px;
     margin: auto;
     margin-top: 10px;
     border-radius: 20px;
 }
 
-.pokemon-list {
+.row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -132,12 +132,7 @@ div.pokedex {
     }
     
     @media all and (max-width: 599px) {
-        .listItem {
-            width: auto;
-            min-height: auto;
-        }
-        .pokemon-list {
-            display: grid;
+        .row {
             grid-template-columns: 1fr;
         }
         div.pokedex {
@@ -148,30 +143,17 @@ div.pokedex {
         }
     }
 
-    @media (min-width: 450px) and (max-width: 600px) {
-        .listItem {
-            width: auto;
-            min-height: auto;
-        }
-        .pokemon-list {
-            display: grid;
+    @media (min-width: 450px) and (max-width: 750px) {
+        .row {
             grid-template-columns: 1fr 1fr;
-        }
-        div.pokedex {
-            width: 90%;
         }
         .button {
             width: 150px;
         }
     }
 
-    @media (min-width: 650px) and (max-width:1200px) {
-        .listItem {
-            width: auto;
-            min-height: auto;
-        }
-        .pokemon-list {
-            display: grid;
+    @media (min-width: 751px) and (max-width:1200px) {
+        .row {
             grid-template-columns: 1fr 1fr 1fr;
         }
     }

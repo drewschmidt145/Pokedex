@@ -20,7 +20,7 @@ let pokemonRepository = (function () {
         $(pokemonRow).addClass('list-group');
 
         $(pokemonButton).addClass('button', 'btn', 'btn-primary').attr('type', 'button')
-          .attr('data-toggle', 'modal').attr('data-target', '.modal-container');
+          .attr('data-toggle', 'modal').attr('data-target', '#modal-container');
 
         $(listItem).addClass('listItem', 'list-group-item', 'col-lg-3', 'col-med-4', 'col-sm-6');
 
