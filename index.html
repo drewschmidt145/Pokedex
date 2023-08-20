@@ -23,12 +23,34 @@
 
     <div class="pokedex container">
         <main class="pokemon__main">
-            <ul class="pokemon-list" ></ul>
+            <ul class="row" id="pokemonRow"></ul>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-container">
+              Pokemon
+            </button>
+
         </main>
-        
     </div>
 
-    <div id="modal-container"></div>
+    <!-- <div id="modal-container"></div> -->
+
+    <div id="modal-container" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-title"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="modal-height" class="modal-height"></p>
+              <img id="modal-image" class="modal-image" alt="Pokemon">
+            </div>
+          </div>
+        </div>
+      </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
