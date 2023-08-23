@@ -70,7 +70,6 @@ let pokemonRepository = (function () {
 
     function showDetails(item) {
       loadDetails(item).then(function () {
-        const modalContainer = document.getElementById('modal-container');
         const modalTitle = document.getElementById('modal-title');
         const modalHeight = document.getElementById('modal-height');
         const modalImage = document.getElementById('modal-image');
@@ -78,12 +77,10 @@ let pokemonRepository = (function () {
 
         modalTitle.textContent = 'Name: ' + item.name;
         modalHeight.textContent = 'Height: ' + item.height + ' m';
-        modalHeight.style.marginTop = '10px';
 
         modalImage.setAttribute('src', item.imageUrl);
         modalImage.setAttribute('alt', item.name);
 
-        modalContainer.style.display = 'block';
       });
     }
 
